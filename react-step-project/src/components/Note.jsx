@@ -2,25 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Note = ({ note: { title, text, id, date, color} }) => {
+
+    
+    // let dateObj = new Date(date);
+    // const day = dateObj.getDay();
+    // const month = dateObj.getMonth();
+    // const year = dateObj.getYear();
+
     return(
-        <NoteComponent color={color}>
-            <NoteHeader>
+        <Component color={color}>
+            <Header>
                 <Title>{title}</Title>
                 <Date>{date}</Date>
-            </NoteHeader>
+            </Header>
             <Text>{text}</Text>
-        </NoteComponent>
+        </Component>
     )
 }
 
-const NoteComponent = styled.div`
+const Component = styled.div`
     background-color: ${p => p.color};
     padding: 10px;
     border-radius: 10px;
     color: white;
 `
 
-const NoteHeader = styled.div`
+const Header = styled.div`
     padding: 5px 0;
     border-bottom: 1px solid white;
 

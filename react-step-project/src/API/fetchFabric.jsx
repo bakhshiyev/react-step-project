@@ -1,4 +1,4 @@
-const domain = 'http://localhost:3006/notes';
+const domain = 'http://localhost:3006';
 
 function fetchFabric(endpoint, method) {
     return async (params = {}) => {

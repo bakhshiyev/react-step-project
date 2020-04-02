@@ -2,44 +2,55 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { Icons } from './Icons';
+import './index.sass';
+import { GoPlus } from "react-icons/go";
+import { FiBox } from "react-icons/fi";
+import { FaStickyNote } from "react-icons/fa";
 
-import images from "../styles/img";
+
+
 
 export const Header = () => {
     return(
         <Container>
             <Logo>NotesApp</Logo>
-            <div>
-                <StyledNavLink exact to="/">Actual</StyledNavLink>
+            <NavLinkContainer>
+                <StyledNavLink exact to="/">
+                    <FaStickyNote className="actual-logo" />Actual
+                </StyledNavLink>
                 <StyledNavLink to="/archive">
-                <Icons src={images.box} alt="archive icon" />
-                    Archive
+                    <FiBox className="actual-logo"/>Archive
                 </StyledNavLink>
                 <StyledNavLink to="/create">
-                    <Icons src={images.plus} alt="create icon" />
-                    Create
+                    <GoPlus className="actual-logo"/>Create
                 </StyledNavLink>
-            </div>
+            </NavLinkContainer>
         </Container>
     );
 };
 
 
-const Container = styled.div`
+const Container = styled.header`
+    background: #c3c5c1;
+    padding: 20px 50px;
     display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid black;
-    padding: 10px 30px; 
-
+    //justify-content: space-between;
+    align-items: center;
 `;
 
-const Logo = styled.p`
-    font-size: 35px;
+const Logo = styled.div`
+    font-size: 30px;
     font-weight: bold;
-    margin: 30px 50px; 
-
+    color: white;
 `;
+
+const NavLinkContainer = styled.div`
+    margin-left: 350px;
+    padding: 15px 0;
+    background-color: white;
+    border-radius: 30px;
+`;
+
 
 const StyledNavLink = styled(NavLink)`
     color: black;
@@ -48,17 +59,28 @@ const StyledNavLink = styled(NavLink)`
     padding: 10px 15px;
     min-width: 150px;
     text-align: center;
+    color: #777a72;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 30px;
     border: 2px solid transparent;
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
+    font-weight: bold;
 
     span {
         margin-right: 10px;
     }
 
+    &:hover{
+        border-color: #777a72;
+        color: rgb(0,191,255);
+        box-shadow: 2px 5px 5px 0px rgba(0,0,0,0.74);
+    }
+
     &.active{
-        border-color: #d32727;
+        //border-color: #d32727;
+        background-color: #9da099;
+        color: white;
     }
 
 `;
+

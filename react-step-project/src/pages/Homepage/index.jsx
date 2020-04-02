@@ -7,11 +7,10 @@ import { NotesContext } from '../../context/notes';
 
 export const Homepage = () => {
 
-    const  {notes}  = useContext(NotesContext);
+    const  notes  = useContext(NotesContext);
 
     return(
         <Container>
-            <h1>Homepage</h1>
             <Row>
                 {notes.map(note => (
                     <Note note={note} key={note.id} />
@@ -23,5 +22,5 @@ export const Homepage = () => {
 
 const Container = styled.div`
     display: flex;
-    justify-content: center;
-`
+`;
+
