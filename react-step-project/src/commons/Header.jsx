@@ -8,8 +8,6 @@ import { FiBox } from "react-icons/fi";
 import { FaStickyNote } from "react-icons/fa";
 
 
-
-
 export const Header = () => {
     return(
         <Container>
@@ -34,7 +32,7 @@ const Container = styled.header`
     background: #c3c5c1;
     padding: 20px 50px;
     display: flex;
-    //justify-content: space-between;
+    margin-bottom: 50px;
     align-items: center;
 `;
 

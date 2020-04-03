@@ -21,16 +21,20 @@ export const Note = ({ note: { title, text, id, date, color} }) => {
 }
 
 const Component = styled.div`
+    display: inline-block;
     background-color: ${p => p.color};
-    padding: 10px;
+    margin-left: 17px;
+    padding: 20px;
+    width: 300px;
     border-radius: 10px;
     color: white;
 `
 
 const Header = styled.div`
+    display: flex;
     padding: 5px 0;
     border-bottom: 1px solid white;
-
+    justify-content: space-between;
 `
 const Title = styled.div`
     font-size: 20px;
@@ -46,4 +50,6 @@ const Date = styled.div`
 
 const Text = styled.p`
     text-align: center;
+    font-size: 13px;
+    padding: 5px;
 `
