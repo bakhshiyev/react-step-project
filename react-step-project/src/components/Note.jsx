@@ -47,7 +47,6 @@ const Header = styled.div`
 const Title = styled.div`
     font-size: 20px;
     font-weight: bold;
-
 `;
 
 const Date = styled.div`

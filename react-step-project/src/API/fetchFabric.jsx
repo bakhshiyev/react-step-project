@@ -26,5 +26,5 @@ function fetchFabric(endpoint, method) {
 }
 
 export const getNotes = fetchFabric('/notes', "GET");
-export const createNote = fetchFabric('/notes', "POST");
+
 
