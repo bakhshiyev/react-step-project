@@ -1,33 +1,32 @@
 {
-
-    "notes": [{
-        "id": 1,
-        "title": "Hello World",
-        "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
-        "date": 1585836364736,
-        "color": "#d32727"
+  "notes": [
+    {
+      "id": 1,
+      "title": "Hello World",
+      "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
+      "date": 1585836364736,
+      "color": "#d32727"
     },
     {
-        "id": 2,
-        "title": "Hello World",
-        "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
-        "date": 1585836364736,
-        "color": "#3a2c84"
+      "id": 2,
+      "title": "Hello World",
+      "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
+      "date": 1585836364736,
+      "color": "#3a2c84"
     },
     {
-        "id": 3,
-        "title": "Hello World",
-        "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
-        "date": 1585836364736,
-        "color": "#ef8e0b"
+      "id": 3,
+      "title": "Hello World",
+      "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
+      "date": 1585836364736,
+      "color": "#ef8e0b"
     },
     {
-        "id": 4,
-        "title": "Hello World",
-        "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
-        "date": 1585836364736,
-        "color": "#516f55"
-    }]
+      "id": 4,
+      "title": "Hello World",
+      "text": "Lorem ipsum dolor sit amet percipitur liberavisse ea vis",
+      "date": 1585836364736,
+      "color": "#516f55"
+    }
+  ]
 }
-
-
