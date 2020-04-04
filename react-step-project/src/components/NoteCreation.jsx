@@ -22,7 +22,7 @@ export const NoteCreation = ({ initial = {} }) => {
   const onSubmit = e => {
     e.preventDefault();
     createNote(fields);
-    //push('/');
+
   }
 
   const getNotes = async () => {
