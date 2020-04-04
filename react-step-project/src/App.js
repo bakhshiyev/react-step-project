@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Homepage, Create, SingleNote } from './pages';
+import { Homepage, SingleNote, Create } from './pages';
+
 import { Header } from './commons';
 import { NoteContextProvider } from './context/notes';
 

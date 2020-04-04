@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { MdClose } from "react-icons/md";
 import { NotesContext } from '../../context/notes';
 import { ModalWindow } from '../../components';
+import { getNotes } from '../../API/fetchFabric';
 
 export const SingleNote = ({ history: { push }, match: { params: { id } } }) => {
 
@@ -15,10 +16,28 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
     const note = notes.find(item => item.id == +id);
     console.log(note);
 
-    // const dateObj = new Date(note.date);
-    //     const day = dateObj.getDay();
-    //     const month = dateObj.getMonth();
-    //     const year = dateObj.getYear();
+    const deleteNote = async id => {
+        try {
+            const res = await fetch(`http://localhost:3006/notes/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const answer = await res.json();
+            getNotes();
+            console.log(answer);
+
+            } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const deleteHandler = () => {
+        deleteNote(id);
+        push('/');
+    }
 
     return(
         <Container>
@@ -53,7 +72,7 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
                     close={toggleModal}
                     actions={[
                         <CancelButton onClick={toggleModal}>Cancel</CancelButton>,
-                        <YesButton>Yes</YesButton>
+                        <YesButton onClick={deleteHandler}>Yes</YesButton>
                     ]} 
                 />
             )}        
@@ -128,6 +147,7 @@ const FunctionalButton = styled.button`
     padding: 12px 40px;
     border: 1px solid black;
     border-radius: 8px;
+    cursor: pointer;
 `;
 
 const CancelButton = styled.button`
@@ -139,7 +159,7 @@ const CancelButton = styled.button`
     background-color: green;
     border: none;
     border-radius: 5px;
-    //min-width: 200px;
+    cursor: pointer;
 `;
 
 
@@ -152,4 +172,5 @@ const YesButton = styled.button`
     border: none;
     border-radius: 5px;
     min-width: 100px;
+    cursor: pointer;
 `;
