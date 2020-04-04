@@ -10,7 +10,7 @@ export const Homepage = () => {
     const  notes  = useContext(NotesContext);
 
     return(
-        <Container>
+        <Container >
             <Row>
                 {notes.map(note => (
                     <Note note={note} key={note.id} />

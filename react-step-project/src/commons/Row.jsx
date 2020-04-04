@@ -16,7 +16,7 @@ export const Row = ({ children, columns = 3, gutter = 15 }) => {
 const RowContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin: ${p => p.gutter * 3}px -${p => p.gutter}px;
+    margin: 0 -${p => p.gutter}px;
 `;
 
 const Column = styled.div`

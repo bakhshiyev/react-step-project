@@ -2,12 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import './index.sass';
 import { GoPlus } from "react-icons/go";
 import { FiBox } from "react-icons/fi";
 import { FaStickyNote } from "react-icons/fa";
-
-
 
 
 export const Header = () => {
@@ -34,7 +31,7 @@ const Container = styled.header`
     background: #c3c5c1;
     padding: 20px 50px;
     display: flex;
-    //justify-content: space-between;
+    margin-bottom: 50px;
     align-items: center;
 `;
 

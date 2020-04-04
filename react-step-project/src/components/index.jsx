@@ -1,2 +1,3 @@
 export { Note } from './Note';
-export { NoteCreation } from './NoteCreation'
+export { ModalWindow } from './ModalWindow';
+export { NoteCreation } from './NoteCreation';
