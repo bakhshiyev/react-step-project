@@ -1,30 +1,80 @@
 {
-    "notes": [{
-        "id": 1,
-        "title": "Hello World",
-        "text": "Lorem Ipsum is simply dummy text of the printing and\n typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "date": 1585836364736,
-        "color": "#d32727"
+  "notes": [
+    {
+      "id": 1,
+      "title": "Hello World",
+      "text": "Lorem Ipsum is simply dummy text of the printing and\n typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "date": 1585836364736,
+      "color": "#d32727"
     },
     {
-        "id": 2,
-        "title": "Hello World",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "date": 1585836364736,
-        "color": "#3a2c84"
+      "id": 2,
+      "title": "Hello World",
+      "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "date": 1585836364736,
+      "color": "#3a2c84"
     },
     {
-        "id": 3,
-        "title": "Hello World",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "date": 1585836364736,
-        "color": "#ef8e0b"
+      "id": 3,
+      "title": "Hello World",
+      "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "date": 1585836364736,
+      "color": "#ef8e0b"
     },
     {
-        "id": 4,
-        "title": "Hello World",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "date": 1585836364736,
-        "color": "#516f55"
-    }]
+      "id": 4,
+      "title": "Hello World",
+      "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "date": 1585836364736,
+      "color": "#516f55"
+    },
+    {
+      "title": "asdfadsf",
+      "text": "asdfasdfasdfadsfasdfadf",
+      "color": "#3a2c84",
+      "id": 5
+    },
+    {
+      "title": "fg",
+      "text": "fg",
+      "color": "#d32727",
+      "id": 6
+    },
+    {
+      "title": "new",
+      "text": "new",
+      "color": "#d32727",
+      "id": 7
+    },
+    {
+      "title": "new",
+      "text": "",
+      "color": "#3a2c84",
+      "id": 8
+    },
+    {
+      "title": "new",
+      "text": "",
+      "color": "#ef8e0b",
+      "id": 9
+    },
+    {
+      "title": "neweww",
+      "text": "agebu",
+      "color": "#3a2c84",
+      "id": 10
+    },
+    {
+      "title": "",
+      "text": "",
+      "color": "#d32727",
+      "id": 11
+    },
+    {
+      "title": "13",
+      "text": "13",
+      "color": "#d32727",
+      "id": 12
+    }
+  ]
 }

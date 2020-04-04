@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-export const NoteCreation = ({ initial = {} }) => {
+export const NoteCreation = ({ initial = {}, btnText }) => {
   const [notes, setNotes] = useState([]);
 
   const [fields, setFields] = useState({
@@ -21,7 +21,18 @@ export const NoteCreation = ({ initial = {} }) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    createNote(fields);
+
+    console.log(btnText);
+
+    if (btnText == "Save") {
+      console.log('modification');
+      console.log(fields.id);
+      editNote(fields.id, fields);
+    }
+    else {
+      console.log("creation");
+      createNote(fields);
+    }
   }
 
   const getNotes = async () => {
@@ -51,6 +62,22 @@ export const NoteCreation = ({ initial = {} }) => {
     }
   };
 
+  const editNote = async (id, { title, text, color }) => {
+    try {
+      const res = await fetch(`http://localhost:3006/notes/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ title, text, color })
+      });
+      const answer = await res.json();
+      console.log(answer);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => { getNotes(); }, []);
 
   return (
@@ -64,7 +91,7 @@ export const NoteCreation = ({ initial = {} }) => {
           onChange={onChange}
         />
         <Textarea
-          placeholder="note context"
+          placeholder="note content"
           type="text"
           name='text'
           value={fields.text}
@@ -114,7 +141,7 @@ export const NoteCreation = ({ initial = {} }) => {
             <span></span>
           </ColorOption>
         </ColorOptions>
-        <Button>Create Note</Button>
+        <Button>{btnText}</Button>
       </Form>
     </div>
   );

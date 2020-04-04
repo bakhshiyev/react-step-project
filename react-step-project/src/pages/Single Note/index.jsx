@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import { MdClose } from "react-icons/md";
 import { NotesContext } from '../../context/notes';
-import { ModalWindow } from '../../components';
+import { ModalWindow, Note } from '../../components';
+import { NoteCreation } from "../../components";
 
 export const SingleNote = ({ history: { push }, match: { params: { id } } }) => {
 
@@ -11,38 +12,45 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
     const toggleModal = () => setModalStatus(v => !v);
     const modalClose = () => setModalStatus(false);
 
-    const  notes  = useContext(NotesContext);
+    const notes = useContext(NotesContext);
     const note = notes.find(item => item.id == +id);
     console.log(note);
+
+    const [editStatus, setEditStatus] = useState(false);
+
+    const handleClick = () => {
+        setEditStatus(!editStatus);
+    }
 
     // const dateObj = new Date(note.date);
     //     const day = dateObj.getDay();
     //     const month = dateObj.getMonth();
     //     const year = dateObj.getYear();
 
-    return(
+    return (
         <Container>
-            {note &&  (  
+            {note && (
                 <Component color={note.color}>
                     <Header>
                         <Title>{note.title}</Title>
                         <Date>{note.date}</Date>
-                        <CloseButton onClick={() => push('/')}><MdClose/></CloseButton>
+                        <CloseButton onClick={() => push('/')}><MdClose /></CloseButton>
                     </Header>
                     <Text>{note.text}</Text>
                 </Component>
             )}
-            
+
             <ButtonsContainer>
-                <FunctionalButton>Edit</FunctionalButton>
+                <FunctionalButton onClick={handleClick}>Edit</FunctionalButton>
+                {editStatus && (<NoteCreation btnText="Save"/>)}
                 <FunctionalButton>Archive</FunctionalButton>
                 <FunctionalButton onClick={toggleModal}>Delete</FunctionalButton>
-            </ButtonsContainer> 
+            </ButtonsContainer>
 
-            {modalStatus ? 
-                <div onClick={modalClose} className="back-drop"></div> 
-                : 
-            null }
+            {modalStatus ?
+                <div onClick={modalClose} className="back-drop"></div>
+                :
+                null}
 
             {modalStatus && (
                 <ModalWindow
@@ -54,9 +62,9 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
                     actions={[
                         <CancelButton onClick={toggleModal}>Cancel</CancelButton>,
                         <YesButton>Yes</YesButton>
-                    ]} 
+                    ]}
                 />
-            )}        
+            )}
 
         </Container>
     );
