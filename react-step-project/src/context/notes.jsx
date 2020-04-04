@@ -4,6 +4,7 @@ import { getNotes } from '../API/fetchFabric';
 
 export const NotesContext = createContext();
 
+ 
 export const NoteContextProvider = ({children}) => {
 
     const [notes, setNotes] = useState([]);
