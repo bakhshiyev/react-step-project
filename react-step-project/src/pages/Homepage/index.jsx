@@ -24,5 +24,6 @@ export const Homepage = () => {
 
 const Container = styled.div`
     display: flex;
+    width: 1500px;
 `;
 

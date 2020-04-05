@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import images from '../styles/img';
 
 import { GoPlus } from "react-icons/go";
 import { FiBox } from "react-icons/fi";
@@ -10,7 +11,9 @@ import { FaStickyNote } from "react-icons/fa";
 export const Header = () => {
     return(
         <Container>
-            <Logo>NotesApp</Logo>
+            <Logo>
+                <Image src={images.note} />
+                NotesApp</Logo>
             <NavLinkContainer>
                 <StyledNavLink exact to="/">
                     <FaStickyNote className="actual-logo" />Actual
@@ -26,9 +29,15 @@ export const Header = () => {
     );
 };
 
+const Image = styled.img`
+    width: 30px;
+    height: 30px;
+    color: white;
+    margin-right: 20px;
+`
 
 const Container = styled.header`
-    background: #c3c5c1;
+    background: rgb(30,144,255);
     padding: 20px 50px;
     display: flex;
     margin-bottom: 50px;
@@ -43,7 +52,9 @@ const Logo = styled.div`
 
 const NavLinkContainer = styled.div`
     margin-left: 350px;
-    padding: 15px 0;
+    padding-top: 15px;
+    padding-bottom: 9px;
+    //padding: 15px 0;
     background-color: white;
     border-radius: 30px;
 `;
@@ -53,7 +64,7 @@ const StyledNavLink = styled(NavLink)`
     color: black;
     text-decoration: none;
     margin: 0 15px;
-    padding: 10px 15px;
+    padding: 10px 25px;
     min-width: 150px;
     text-align: center;
     color: #777a72;
@@ -62,6 +73,7 @@ const StyledNavLink = styled(NavLink)`
     border: 2px solid transparent;
     transition: all 0.5s ease-out;
     font-weight: bold;
+    
 
     span {
         margin-right: 10px;
@@ -75,7 +87,7 @@ const StyledNavLink = styled(NavLink)`
 
     &.active{
         //border-color: #d32727;
-        background-color: #9da099;
+        background-color: rgb(30,144,255);
         color: white;
     }
 

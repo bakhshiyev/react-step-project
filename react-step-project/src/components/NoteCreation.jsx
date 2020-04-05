@@ -53,6 +53,30 @@ export const NoteCreation = ({ initial = {} }) => {
     }
   };
 
+  // const editNote = async (id, { title, text }) => {
+  //   try {
+
+  //   const res = await fetch(`http://localhost:3006/notes/${id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({ title, text })
+  //   });
+
+  //       const answer = await res.json();
+  //       getNotes();
+  //       console.log(answer);
+
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // const editNoteHandler = () => {
+  //   editNote(fields.id, fields);
+  // }
+
   useEffect(() => { getNotes(); }, []);
 
   return (
