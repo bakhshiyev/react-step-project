@@ -5,15 +5,15 @@ import { Row } from '../../commons';
 import { Note } from '../../components';
 import { NotesContext } from '../../context/notes';
 
-export const Homepage = () => {
+export const Archive = () => {
 
-    const  notes  = useContext(NotesContext);
+    const notes = useContext(NotesContext);
 
     return(
         <Container >
             <Row>
                 {notes
-                    .filter(note => note.archiveStatus === false)
+                    .filter(note => note.archiveStatus === true)
                     .map(note => (
                     <Note note={note} key={note.id} />
                 ))}
@@ -25,4 +25,3 @@ export const Homepage = () => {
 const Container = styled.div`
     display: flex;
 `;
-
