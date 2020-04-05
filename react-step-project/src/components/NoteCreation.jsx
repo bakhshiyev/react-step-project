@@ -8,6 +8,8 @@ export const NoteCreation = ({ initial = {} }) => {
     title: "",
     text: "",
     color: "#d32727",
+    archiveStatus: false,
+    date: Date.now(),
     ...initial
   });
 
@@ -22,7 +24,6 @@ export const NoteCreation = ({ initial = {} }) => {
   const onSubmit = e => {
     e.preventDefault();
     createNote(fields);
-    //push('/');
   }
 
   const getNotes = async () => {
@@ -36,14 +37,14 @@ export const NoteCreation = ({ initial = {} }) => {
     }
   };
 
-  const createNote = async ({ title, text, color }) => {
+  const createNote = async ({ title, text, color, archiveStatus, date }) => {
     try {
       const res = await fetch("http://localhost:3006/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ title, text, color })
+        body: JSON.stringify({ title, text, color, archiveStatus, date })
       });
       const answer = await res.json();
       console.log(answer);
