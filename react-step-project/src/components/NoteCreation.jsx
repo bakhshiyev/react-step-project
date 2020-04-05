@@ -24,6 +24,7 @@ export const NoteCreation = ({ initial = {} }) => {
   const onSubmit = e => {
     e.preventDefault();
     createNote(fields);
+
   }
 
   const getNotes = async () => {
