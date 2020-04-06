@@ -15,9 +15,6 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
     const toggleModal = () => setModalStatus(v => !v);
     const modalClose = () => setModalStatus(false);
 
-    const [editModalStatus, setEditModalStatus] = useState(false);
-    const togggleEditModal = () => setEditModalStatus(v => !v);
-    const modalEditClose = () => setEditModalStatus(false);
 
     const  notes  = useContext(NotesContext);
     const note = notes.find(item => item.id == +id);
