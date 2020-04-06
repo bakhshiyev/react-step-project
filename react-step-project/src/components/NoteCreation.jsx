@@ -24,6 +24,7 @@ export const NoteCreation = ({ initial = {} }) => {
   const onSubmit = e => {
     e.preventDefault();
     createNote(fields);
+
   }
 
   const getNotes = async () => {
@@ -52,30 +53,6 @@ export const NoteCreation = ({ initial = {} }) => {
       console.log(error);
     }
   };
-
-  // const editNote = async (id, { title, text }) => {
-  //   try {
-
-  //   const res = await fetch(`http://localhost:3006/notes/${id}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify({ title, text })
-  //   });
-
-  //       const answer = await res.json();
-  //       getNotes();
-  //       console.log(answer);
-
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const editNoteHandler = () => {
-  //   editNote(fields.id, fields);
-  // }
 
   useEffect(() => { getNotes(); }, []);
 
@@ -235,3 +212,20 @@ const ColorOption = styled.label`
     border-color: white;
   }
 `;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -51,7 +51,7 @@ const Logo = styled.div`
 `;
 
 const NavLinkContainer = styled.div`
-    margin-left: 350px;
+    margin-left: 265px;
     padding-top: 15px;
     padding-bottom: 9px;
     //padding: 15px 0;
