@@ -17,9 +17,11 @@ const RowContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: 0 -${p => p.gutter}px;
+    width: 1550px;
 `;
 
 const Column = styled.div`
     width: calc(100% / ${p => p.colums});
-    padding: 0 ${p => p.gutter}px ${p => p.gutter * 2}px;
+    //padding: 0 ${p => p.gutter}px ${p => p.gutter * 2}px;
+    padding: 0 20px 30px 5px;
 `;

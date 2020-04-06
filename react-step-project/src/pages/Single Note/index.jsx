@@ -9,7 +9,7 @@ import { NotesContext } from '../../context/notes';
 import { ModalWindow } from '../../components';
 import { getNotes } from '../../API/fetchFabric';
 
-export const SingleNote = ({ history: { push }, match: { params: { id } } }) => {
+export const SingleNote = ({ history: { push }, match: { params: { id } } }, {editNoteHandler}) => {
 
     const [modalStatus, setModalStatus] = useState(false);
     const toggleModal = () => setModalStatus(v => !v);
@@ -79,6 +79,26 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
         push('/');
     }
 
+    // const editNote = async (id, { title, text }) => {
+    //     try {
+
+    //     const res = await fetch(`http://localhost:3006/notes/${id}`, {
+    //       method: "PATCH",
+    //       headers: {
+    //         "Content-Type": "application/json"
+    //       },
+    //       body: JSON.stringify({ title, text })
+    //     });
+
+    //         const answer = await res.json();
+    //         getNotes();
+    //         console.log(answer);
+
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    // };
+
     return(
         <Container>
             {note &&  (  
@@ -86,7 +106,13 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
                     <Header>
                         <Title>{note.title}</Title>
                         <Date>{note.date}</Date>
-                        <CloseButton onClick={() => push('/')}><MdClose/></CloseButton>
+
+                        {note.archiveStatus ?
+                            <CloseButton onClick={() => push('/archive')}><MdClose/></CloseButton>
+                            :
+                            <CloseButton onClick={() => push('/')}><MdClose/></CloseButton>
+                        }
+
                     </Header>
                     <Text>{note.text}</Text>
                 </Component>
@@ -94,7 +120,7 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }) => 
             
             {note && (
                 <ButtonsContainer>
-                    <FunctionalButton>
+                    <FunctionalButton onClick={() => editNoteHandler}>
                         <FaRegEdit className="edit-icon"/>Edit
                     </FunctionalButton>
 
@@ -153,6 +179,8 @@ const Component = styled.div`
     width: 750px;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
+    margin-bottom: 50px;
 `;
 
 const Header = styled.div`
