@@ -1,19 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { MdClose, MdDeleteForever } from "react-icons/md";
+import { MdClose, MdDeleteForever, MdUnarchive } from "react-icons/md";
 import { IoMdArchive } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
-import { NotesContext } from '../../context/notes';
 
+import { NotesContext } from '../../context/notes';
 import { ModalWindow } from '../../components';
 import { getNotes } from '../../API/fetchFabric';
 
-export const SingleNote = ({ history: { push }, match: { params: { id } } }, {editNoteHandler}) => {
+export const SingleNote = ({ history: { push }, match: { params: { id } } }) => {
 
     const [modalStatus, setModalStatus] = useState(false);
     const toggleModal = () => setModalStatus(v => !v);
     const modalClose = () => setModalStatus(false);
+
 
     const  notes  = useContext(NotesContext);
     const note = notes.find(item => item.id == +id);
@@ -79,40 +80,21 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }, {ed
         push('/');
     }
 
-    // const editNote = async (id, { title, text }) => {
-    //     try {
-
-    //     const res = await fetch(`http://localhost:3006/notes/${id}`, {
-    //       method: "PATCH",
-    //       headers: {
-    //         "Content-Type": "application/json"
-    //       },
-    //       body: JSON.stringify({ title, text })
-    //     });
-
-    //         const answer = await res.json();
-    //         getNotes();
-    //         console.log(answer);
-
-    //     } catch (error) {
-    //       console.log(error);
-    //     }
-    // };
-
     return(
         <Container>
             {note &&  (  
                 <Component color={note.color}>
                     <Header>
                         <Title>{note.title}</Title>
-                        <Date>{note.date}</Date>
-
+                        <Date>{new  window.Date(note.date).getDate()}/
+                            {new  window.Date(note.date).getMonth() + 1}/
+                            {new  window.Date(note.date).getFullYear()}
+                        </Date>
                         {note.archiveStatus ?
                             <CloseButton onClick={() => push('/archive')}><MdClose/></CloseButton>
                             :
                             <CloseButton onClick={() => push('/')}><MdClose/></CloseButton>
                         }
-
                     </Header>
                     <Text>{note.text}</Text>
                 </Component>
@@ -120,13 +102,13 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }, {ed
             
             {note && (
                 <ButtonsContainer>
-                    <FunctionalButton onClick={() => editNoteHandler}>
+                    <FunctionalButton onClick={() => { push(`/edit/${id}`)}}>
                         <FaRegEdit className="edit-icon"/>Edit
                     </FunctionalButton>
 
                     {note.archiveStatus ? (
                         <FunctionalButton onClick={() => addToUnArchive(id)} >
-                            <IoMdArchive className="archive-icon" />Unarchive
+                            <MdUnarchive  className="archive-icon" />Unarchive
                         </FunctionalButton>
                         ) : (
                         <FunctionalButton onClick={() => addToArchive(id)}>
@@ -140,13 +122,13 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }, {ed
                         <MdDeleteForever className="delete-icon" />Delete
                     </FunctionalButton>
                 </ButtonsContainer>
-                
-              )}   
+            )}   
             
             {modalStatus ? 
                 <div onClick={modalClose} className="back-drop"></div> 
                 : 
-            null }
+                null 
+            }
 
             {modalStatus && (
                 <ModalWindow
@@ -159,8 +141,7 @@ export const SingleNote = ({ history: { push }, match: { params: { id } } }, {ed
                         <YesButton onClick={deleteHandler}>Yes</YesButton>
                     ]} 
                 />
-            )}        
-
+            )} 
         </Container>
     );
 };
@@ -249,7 +230,7 @@ const CancelButton = styled.button`
     margin-right: 70px;
     color: white;
     font-size: 15px;
-    background-color: green;
+    background-color: #007600;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -261,7 +242,7 @@ const YesButton = styled.button`
     padding: 15px 25px;
     color: white;
     font-size: 15px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: red;
     border: none;
     border-radius: 5px;
     min-width: 100px;

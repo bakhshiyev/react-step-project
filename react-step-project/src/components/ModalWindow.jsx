@@ -31,7 +31,7 @@ const ModalContainer = styled.div`
     margin: -131px 0 0 -258px;   
     border-radius: 5px; 
     position: absolute;
-    background-color: #E74C3C;
+    background-color: #8a8a8a;
     text-align: center;
 `;
 
@@ -40,7 +40,7 @@ const Header = styled.header`
     justify-content: space-between;
     display: flex;
     padding: 20px 20px 20px;
-    background-color: #D44637;
+    background-color: #6c6c6c;
     color: white;
     font-size: 22px;
     font-weight: 600;
@@ -61,7 +61,7 @@ const ModalText = styled.p`
 `;
 
 const CloseButton = styled.button`
-    background-color: #D44637;
+    background-color: #6c6c6c;
     color: white;
     border: none;
     cursor: pointer;

@@ -4,18 +4,24 @@ import styled from 'styled-components';
 
 export const Note = ({ note: { title, text, id, date, color} }) => {
 
-    console.log(date);
-    // const dateObj = new Date(date);
-    //     const day = dateObj.getDay();
-    //     const month = dateObj.getMonth();
-    //     const year = dateObj.getYear();
+    //console.log(date);
+
+    const dateObject = new window.Date(date);
+    let day = dateObject.getDate();
+    let month = dateObject.getMonth() + 1;
+    let year = dateObject.getFullYear();
+
+    if(day < 10 || month < 10){
+        day = '0' + String(day);
+        month = '0' + String(month);
+    }
 
     return(
         <StyledLink to={`/single-note/${id}`}>
             <Component color={color}>
                 <Header>
                     <Title>{title}</Title>
-                    <Date>{date}</Date>
+                    <Date>{day}/{month}/{year}</Date>
                 </Header>
                 <Text>{text}</Text>
             </Component>
